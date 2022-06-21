@@ -1,7 +1,9 @@
 #!/bin/bash	
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install docker.io
+sudo apt install -y docker.io
+sudo systemctl enable docker --now
+sudo usermod -aG docker $USER
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 sudo curl -LO https://dl.k8s.io/release/v1.21.7/bin/linux/amd64/kubectl
